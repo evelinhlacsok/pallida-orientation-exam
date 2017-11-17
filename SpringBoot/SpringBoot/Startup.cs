@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using SpringBoot.Entities;
+using SpringBoot.Repositories;
 
 namespace SpringBoot
 {
@@ -15,6 +18,9 @@ namespace SpringBoot
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+            services.AddDbContext<CarContext>(options => options.UseSqlite("Data Source=cardatabase.db"));
+            services.AddScoped<CarRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -24,6 +30,9 @@ namespace SpringBoot
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMvc();
+            app.UseStaticFiles();
 
             app.Run(async (context) =>
             {
