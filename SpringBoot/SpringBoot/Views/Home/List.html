@@ -1,0 +1,29 @@
+﻿@model ICollection<SpringBoot.Models.Car>
+    <!DOCTYPE HTML>
+    <html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Car List</title>
+    </head>
+    <body>
+        <h2>Results</h2>
+        <table>
+            <tr>
+                <th>Plate</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Year</th>
+            </tr>
+            @foreach (var item in @Model)
+            {
+            <tr>
+                <td>@item.Plate</td>
+                <td>@item.Brand</td>
+                <td>@item.Model</td>
+                <td>@item.Color</td>
+                <td>@item.Year</td>
+            </tr>
+            }
+        </table>
+    </body>
+</html>

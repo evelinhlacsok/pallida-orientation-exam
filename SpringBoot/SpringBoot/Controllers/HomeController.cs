@@ -19,9 +19,17 @@ namespace SpringBoot.Controllers
             CarRepository = carRepository;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [Route("/search")]
+        [HttpGet]
+        public IActionResult ListCars()
+        {
+            return RedirectToAction("list");
         }
     }
 }

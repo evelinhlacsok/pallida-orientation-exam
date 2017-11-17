@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using SpringBoot.Entities;
+using SpringBoot.Models;
 
 namespace SpringBoot.Repositories
 {
@@ -11,5 +14,11 @@ namespace SpringBoot.Repositories
         {
             CarContext = carContext;
         }
+
+        public List<Car>GetList()
+        {
+            return CarContext.Cars.ToList();
+        }
+
     }
 }
