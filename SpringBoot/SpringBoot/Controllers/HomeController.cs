@@ -39,5 +39,13 @@ namespace SpringBoot.Controllers
             CarRepository.PoliceCars();
             return RedirectToAction("list");
         }
+
+        [Route("/search/diplomats")]
+        [HttpGet]
+        public IActionResult DiplomatCars()
+        {
+            CarRepository.DiplomatCars();
+            return RedirectToAction("list");
+        }
     }
 }
