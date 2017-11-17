@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SpringBoot.Repositories;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -25,12 +21,19 @@ namespace SpringBoot.Controllers
             return View();
         }
 
-        [Route("/search")]
         [HttpGet]
-        public IActionResult ListCars()
+        [Route("/search")]
+        public IActionResult SearchResult(string plate)
         {
-            return View(CarRepository.GetList());
+            return View("Search", CarRepository.GetSearchedCars(plate));
         }
+
+        //[Route("/search")]
+        //[HttpGet]
+        //public IActionResult ListCars()
+        //{
+        //    return View(CarRepository.GetList());
+        //}
 
         [Route("/search/police")]
         [HttpGet]

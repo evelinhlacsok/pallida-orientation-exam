@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using SpringBoot.Entities;
 using SpringBoot.Models;
-using System.Threading.Tasks;
 
 namespace SpringBoot.Repositories
 {
@@ -19,6 +17,11 @@ namespace SpringBoot.Repositories
         public List<Car>GetList()
         {
             return CarContext.CarPlates.ToList();
+        }
+
+        public List<Car> GetSearchedCars(string plate)
+        {
+            return CarContext.CarPlates.Where(x => x.Plate.Contains(plate)).ToList();
         }
 
         public List<Car>PoliceCars()
