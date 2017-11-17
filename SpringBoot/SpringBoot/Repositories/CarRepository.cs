@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SpringBoot.Entities;
 using SpringBoot.Models;
+using System.Threading.Tasks;
 
 namespace SpringBoot.Repositories
 {
@@ -20,5 +21,14 @@ namespace SpringBoot.Repositories
             return CarContext.Cars.ToList();
         }
 
+        public List<Car>PoliceCars()
+        {
+            return CarContext.Cars.Where(x => x.Plate.StartsWith("RB")).ToList();        
+        }
+
+        public List<Car>DiplomatCars()
+        {
+            return CarContext.Cars.Where(x => x.Plate.StartsWith("DT")).ToList();
+        }
     }
 }
