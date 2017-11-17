@@ -10,7 +10,7 @@ using System;
 namespace SpringBoot.Migrations
 {
     [DbContext(typeof(CarContext))]
-    [Migration("20171117112248_InitCreate")]
+    [Migration("20171117115737_InitCreate")]
     partial class InitCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

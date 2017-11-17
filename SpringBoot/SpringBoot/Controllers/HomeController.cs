@@ -52,7 +52,14 @@ namespace SpringBoot.Controllers
         //[HttpGet]
         //public IActionResult BrandSearch()
         //{
-           
+        //    return View();
+        //}
+
+        //[Route("/api/search/{brand}")]
+        //[HttpGet]
+        //public IActionResult BrandSearchApi()
+        //{
+        //    return Json();
         //}
     }
 }
