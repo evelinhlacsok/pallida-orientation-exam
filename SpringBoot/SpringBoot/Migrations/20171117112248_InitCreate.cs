@@ -4,31 +4,32 @@ using System.Collections.Generic;
 
 namespace SpringBoot.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Cars",
+                name: "CarPlates",
                 columns: table => new
                 {
-                    Plate = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<long>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Brand = table.Column<string>(type: "TEXT", nullable: true),
                     Color = table.Column<string>(type: "TEXT", nullable: true),
                     Model = table.Column<string>(type: "TEXT", nullable: true),
+                    Plate = table.Column<string>(type: "TEXT", nullable: true),
                     Year = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cars", x => x.Plate);
+                    table.PrimaryKey("PK_CarPlates", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Cars");
+                name: "CarPlates");
         }
     }
 }

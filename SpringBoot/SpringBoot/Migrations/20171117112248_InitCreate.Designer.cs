@@ -10,8 +10,8 @@ using System;
 namespace SpringBoot.Migrations
 {
     [DbContext(typeof(CarContext))]
-    [Migration("20171117090017_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20171117112248_InitCreate")]
+    partial class InitCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace SpringBoot.Migrations
 
             modelBuilder.Entity("SpringBoot.Models.Car", b =>
                 {
-                    b.Property<int>("Plate")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Brand");
@@ -30,11 +30,13 @@ namespace SpringBoot.Migrations
 
                     b.Property<string>("Model");
 
+                    b.Property<string>("Plate");
+
                     b.Property<int>("Year");
 
-                    b.HasKey("Plate");
+                    b.HasKey("Id");
 
-                    b.ToTable("Cars");
+                    b.ToTable("CarPlates");
                 });
 #pragma warning restore 612, 618
         }

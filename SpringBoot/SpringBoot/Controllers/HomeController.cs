@@ -29,7 +29,7 @@ namespace SpringBoot.Controllers
         [HttpGet]
         public IActionResult ListCars()
         {
-            return RedirectToAction("list");
+            return View(CarRepository.GetList());
         }
 
         [Route("/search/police")]
@@ -47,5 +47,12 @@ namespace SpringBoot.Controllers
             CarRepository.DiplomatCars();
             return RedirectToAction("list");
         }
+
+        //[Route("/search/{brand}")]
+        //[HttpGet]
+        //public IActionResult BrandSearch()
+        //{
+           
+        //}
     }
 }

@@ -10,6 +10,6 @@ namespace SpringBoot.Entities
         {
         }
 
-        public DbSet<Car> Cars { get; set; }
+        public DbSet<Car> CarPlates { get; set; }
     }
 }

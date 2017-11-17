@@ -19,7 +19,7 @@ namespace SpringBoot
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<CarContext>(options => options.UseSqlite("Data Source=cardatabase.db"));
+            services.AddDbContext<CarContext>(options => options.UseSqlite("Data Source=carplatedatabase.db"));
             services.AddScoped<CarRepository>();
         }
 

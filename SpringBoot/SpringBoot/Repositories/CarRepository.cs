@@ -18,17 +18,22 @@ namespace SpringBoot.Repositories
 
         public List<Car>GetList()
         {
-            return CarContext.Cars.ToList();
+            return CarContext.CarPlates.ToList();
         }
 
         public List<Car>PoliceCars()
         {
-            return CarContext.Cars.Where(x => x.Plate.StartsWith("RB")).ToList();        
+            return CarContext.CarPlates.Where(x => x.Plate.StartsWith("RB")).ToList();        
         }
 
         public List<Car>DiplomatCars()
         {
-            return CarContext.Cars.Where(x => x.Plate.StartsWith("DT")).ToList();
+            return CarContext.CarPlates.Where(x => x.Plate.StartsWith("DT")).ToList();
         }
+
+        //public List<Car>SameBrand()
+        //{
+        //    return CarContext.Cars.Where(x => x.Brand).ToList();
+        //}
     }
 }
